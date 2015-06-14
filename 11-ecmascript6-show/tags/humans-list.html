@@ -1,0 +1,20 @@
+<humans-list>
+  <h1 name="bigTitle">Humans</h1>
+  <h2>{title}</h2>
+  <ul>
+    <li each="{human in opts.humans.models}">
+      {human.firstName} {human.lastName}
+    </li>
+  </ul>
+
+  <script type="es6">
+
+    this.on("mount", () => {
+      this.title = "Humans List";
+      this.bigTitle.style.color = 'orange';
+      this.update();
+    });
+
+  </script>
+
+</humans-list>

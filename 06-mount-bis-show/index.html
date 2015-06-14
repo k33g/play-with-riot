@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>RiotJS</title>
+  <link rel="stylesheet" type="text/css" href="css/k33g.css">
+  <!-- tags -->
+  <script src="tags/one.html" type="riot/tag"></script>
+  <script src="tags/two.html" type="riot/tag"></script>
+  <script src="tags/three.html" type="riot/tag"></script>
+
+</head>
+<body>
+  <a href="#one">one</a>
+  <a href="#two">two</a>
+  <a href="#three">three</a>
+
+  <here></here>
+
+  <script src="js/vendors/riot+compiler.min.js"></script>
+  <script>
+    riot.route(function(choice) {
+      riot.mountTo("here", choice)
+    });
+    riot.route.start()
+
+  </script>
+</body>
+</html>

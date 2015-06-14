@@ -1,0 +1,14 @@
+<hello-world>
+  <!-- hello-world -->
+  <h1>hello</h1>
+  <h2 name="h2">salut</h2>
+  <script>
+
+    this.on("mount", function() {
+      $(this.root).find("h1").first().html("Hello world")
+
+      $(this.h2).html("Salut à tous").css("color", "green")
+
+    }.bind(this))
+  </script>
+</hello-world>

@@ -1,0 +1,25 @@
+<!-- le tag est observable - update <= humans:change -->
+<humans-list>
+  <h1>{message}</h1>
+  <!-- humans-list -->
+  <ul>
+    <li each={human in opts.humans}>{human.firstName} {human.lastName}
+    </li>
+  </ul>
+  <script>
+    this.opts.broker.observe(this);
+    this.on("change:humans", function() {
+      this.update()
+    });
+
+    /*
+      ajouter des "humains" à la collection humans à partir de la console du navigateur:
+
+        humansCollection.push({firstName:"Philippe", lastName:"Charrière"})
+
+      puis faire (toujours dans la console) un broker.emit("change:humans") pour déclencher la mise à jour
+     */
+
+
+  </script>
+</humans-list>

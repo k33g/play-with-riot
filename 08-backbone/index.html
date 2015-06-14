@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>RiotJS</title>
+    <link rel="stylesheet" type="text/css" href="css/k33g.css">
+    <!-- tags -->
+    <script src="tags/humans-list.html" type="riot/tag"></script>
+
+</head>
+<body>
+
+  <humans-list></humans-list>
+
+  <script src="js/vendors/riot+compiler.min.js"></script>
+  <script src="js/vendors/jquery-2.1.3.min.js"></script>
+  <script src="js/vendors/underscore-min.js"></script>
+  <script src="js/vendors/backbone-min.js"></script>
+
+  <script>
+    var Human = Backbone.Model.extend()
+      , Humans = Backbone.Collection.extend({model:Human})
+      , humansCollection = new Humans([
+            new Human({firstName:"Bob", lastName:"Morane"})
+          , new Human({firstName:"John", lastName:"Doe"})
+          , new Human({firstName:"Jane", lastName:"Doe"})
+      ]);
+
+    riot.mount("humans-list", {humans: humansCollection})
+
+  </script>
+</body>
+</html>

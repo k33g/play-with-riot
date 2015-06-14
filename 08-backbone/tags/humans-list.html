@@ -1,0 +1,22 @@
+<!-- une liste qui change quand on ajoute un modèle -->
+<humans-list>
+  <!-- humans-list -->
+  <ul>
+    <li each="{human in opts.humans.models}">
+      {human.get("firstName")} {human.get("lastName")}
+    </li>
+  </ul>
+  <script>
+    this.opts.humans.on("add", function() {
+      this.update()
+    }.bind(this))
+
+    /*
+      dans la console du navigateur, ajouter un Human à la collection:
+        humansCollection.add(new Human({firstName:"Donald", lastName:"Duck"}))
+
+        le changement est affiché automatiquement
+     */
+
+  </script>
+</humans-list>

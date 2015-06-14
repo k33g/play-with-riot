@@ -1,0 +1,11 @@
+<hello-world>
+  <!-- hello-world -->
+  <h1 name="mytitle">{title}</h1>
+  <input name="mytext" onchange="{change}"/>
+  <script>
+    this.change = function() {
+      this.title = this.mytext.value;
+      this.mytitle.style.color = this.mytext.value;
+    }
+  </script>
+</hello-world>

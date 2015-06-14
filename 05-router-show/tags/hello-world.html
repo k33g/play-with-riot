@@ -1,0 +1,14 @@
+<!-- un titre qui change de couleur, une zone de texte -->
+<hello-world>
+  <!-- hello-world -->
+  <h1>{data}</h1>
+  <script>
+    this.opts.broker.observe(this)
+
+    this.on("message", function(data) {
+
+      this.data = [].slice.apply(data).join(" | ")
+      this.update()
+    })
+  </script>
+</hello-world>
